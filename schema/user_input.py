@@ -84,7 +84,7 @@ class CustomerData(BaseModel):
 
     MonthlyCharges: float = Field(ge=0)
 
-    TotalCharges: Optional[float] = Field(default=None, ge=0)
+    TotalCharges: float | None = Field(default=None, ge=0)
 
     # Handle cases where TotalCharges comes in as " "
     @field_validator("TotalCharges", mode="before")
